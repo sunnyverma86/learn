@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: LAND-VALUATION-ADMIN-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/areap2
+    username: postgres
+    password: root
+
+security:
+  jwt:
+    secret-key: my-secret-key
+    expiration-time: 900000
