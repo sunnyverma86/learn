@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+        - id: admin
+          uri: lb://LAND-VALUATION-ADMIN-SERVICE
+          predicates:
+            - Path=/api/**
+          filters:
+            - name: JwtAuthFilter
